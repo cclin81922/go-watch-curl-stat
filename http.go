@@ -8,12 +8,12 @@ import (
 
 var (
     client = http.Client{
-        Timeout: 5 * time.Second,
+        Timeout: time.Duration(*timeout) * time.Second,
     }
 )
 
 func Get(model Model) {
-    res, err := client.Get("http://httpstat.us/200")
+    res, err := client.Get(*url)
 
     if err != nil {
         log.Fatal(err)

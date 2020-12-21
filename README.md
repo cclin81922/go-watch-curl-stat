@@ -18,5 +18,6 @@ go get github.com/cclin81922/go-watch-curl-stat
 # Usage
 
 ```
-go-watch-curl-stat -h www.example.com -i 10
+go-watch-curl-stat
+go-watch-curl-stat --url http://httpstat.us/200 --interval 10 --timeout 5
 ```

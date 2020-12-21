@@ -5,8 +5,9 @@ import (
 )
 
 func main() {
+    Parse()
     model := NewModel()
-    for now := range time.Tick(1 * time.Second) {
+    for now := range time.Tick(time.Duration(*interval) * time.Second) {
         Get(model)
         Update(now, model)
     }
