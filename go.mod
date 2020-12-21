@@ -1,4 +1,4 @@
-module go.watch.curl.stat
+module github.com/cclin81922/go-watch-curl-stat
 
 go 1.15
 

@@ -5,7 +5,7 @@ git clone https://github.com/cclin81922/go-watch-curl-stat.git
 cd go-watch-curl-stat
 
 go build
-./go.watch.curl.stat
+./go-watch-curl-stat
 ```
 
 # Install
