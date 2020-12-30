@@ -7,7 +7,7 @@ import (
 func main() {
     Parse()
     model := NewModel()
-    for now := range time.Tick(time.Duration(*interval) * time.Second) {
+    for now := range time.Tick(*interval) {
         Get(model)
         Update(now, model)
     }

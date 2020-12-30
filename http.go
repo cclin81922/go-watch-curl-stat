@@ -16,8 +16,9 @@ func Get(model Model) {
     res, err := client.Get(*url)
 
     if err != nil {
-        log.Fatal(err)
+        model.Inc(599)
+        log.Println(err)
+    } else {
+        model.Inc(res.StatusCode)
     }
-
-    model.Inc(res.StatusCode)
 }
