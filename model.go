@@ -14,7 +14,7 @@ func (m Model) String() string {
     var s = ""
 
     for k,v := range m {
-        s += fmt.Sprintf("%v:%v", k,v)
+        s += fmt.Sprintf("%v:%v ", k,v)
     }
 
     return s
