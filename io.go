@@ -6,7 +6,7 @@ import (
 )
 
 func writeLog(model Model) int {
-    log := fmt.Sprintf("%s%s\n", model.String(), *note)
+    log := fmt.Sprintf("%s%s\n", model.ToString(), *note)
 
     f, e := os.OpenFile("/tmp/go-watch-curl-stat.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
     if e != nil {

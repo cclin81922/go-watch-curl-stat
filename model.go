@@ -11,7 +11,7 @@ func (m Model) Inc(key int) {
     m[key]++
 }
 
-func (m Model) String() string {
+func (m Model) ToString() string {
     var b strings.Builder
 
     for k,v := range m {
