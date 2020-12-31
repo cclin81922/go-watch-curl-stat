@@ -6,11 +6,9 @@ import (
     "syscall"
 )
 
-var (
-    done = make(chan bool, 1)
-)
+func registerSignal() <-chan bool{
+    done := make(chan bool, 1)
 
-func registerSignal() {
     sigs := make(chan os.Signal, 1)
     signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 
@@ -18,4 +16,6 @@ func registerSignal() {
         <-sigs
         done <- true
     }()
+
+    return done
 }

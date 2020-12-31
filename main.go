@@ -5,7 +5,7 @@ import (
     "time"
 )
 
-func loop(model Model) {
+func loop(model Model, done <-chan bool) {
     for {
         select {
         case <-done:
@@ -19,9 +19,9 @@ func loop(model Model) {
 
 func main() {
     parseArgs()
-    registerSignal()
+    done := registerSignal()
     model := newModel()
-    loop(model)
+    loop(model, done)
     statusCode := writeLog(model)
 
     os.Exit(statusCode)
