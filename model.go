@@ -20,6 +20,6 @@ func (m Model) String() string {
     return s
 }
 
-func NewModel() Model {
+func newModel() Model {
     return Model{}
 }

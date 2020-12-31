@@ -11,6 +11,6 @@ var (
     timeout = flag.Int("timeout", 5, "Request timeout (seconds)")
 )
 
-func ParseArgs() {
+func parseArgs() {
     flag.Parse()
 }

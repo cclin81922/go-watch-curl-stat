@@ -10,7 +10,7 @@ var (
     done = make(chan bool, 1)
 )
 
-func RegisterSignal() {
+func registerSignal() {
     sigs := make(chan os.Signal, 1)
     signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 

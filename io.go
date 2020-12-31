@@ -5,7 +5,7 @@ import (
     "fmt"
 )
 
-func WriteLog(model Model) int {
+func writeLog(model Model) int {
     f, e := os.OpenFile("/tmp/go-watch-curl-stat.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
     if e != nil {
 	    fmt.Println(e)

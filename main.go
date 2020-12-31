@@ -5,7 +5,7 @@ import (
     "time"
 )
 
-func Loop(model Model) {
+func loop(model Model) {
     for {
         select {
         case <-done:
@@ -18,11 +18,11 @@ func Loop(model Model) {
 }
 
 func main() {
-    ParseArgs()
-    RegisterSignal()
-    model := NewModel()
-    Loop(model)
-    statusCode := WriteLog(model)
+    parseArgs()
+    registerSignal()
+    model := newModel()
+    loop(model)
+    statusCode := writeLog(model)
 
     os.Exit(statusCode)
 }
