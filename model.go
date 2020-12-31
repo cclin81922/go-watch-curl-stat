@@ -2,6 +2,7 @@ package main
 
 import (
     "fmt"
+    "strings"
 )
 
 type Model map[int]int
@@ -11,13 +12,13 @@ func (m Model) Inc(key int) {
 }
 
 func (m Model) String() string {
-    var s = ""
+    var b strings.Builder
 
     for k,v := range m {
-        s += fmt.Sprintf("%v:%v ", k,v)
+        fmt.Fprintf(&b, "%v:%v ", k,v)
     }
 
-    return s
+    return b.String()
 }
 
 func newModel() Model {
