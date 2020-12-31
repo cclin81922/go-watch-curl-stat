@@ -22,7 +22,7 @@ func main() {
     RegisterSignal()
     model := NewModel()
     Loop(model)
-    PostAction(model)
+    statusCode := WriteLog(model)
 
-    os.Exit(0)
+    os.Exit(statusCode)
 }
