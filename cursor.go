@@ -5,7 +5,7 @@ import (
     "github.com/cclin81922/go-3rd-party/go-cursor"
 )
 
-func Update(message... interface{}) {
+func UpdateScreen(message... interface{}) {
     fmt.Print(cursor.ClearEntireScreen())
     fmt.Print(cursor.MoveTo(0, 0))
     fmt.Println(message...)

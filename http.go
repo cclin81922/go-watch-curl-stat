@@ -12,7 +12,7 @@ var (
     }
 )
 
-func Get(model Model) {
+func HttpGet(model Model) {
     res, err := client.Get(*url)
 
     if err != nil {

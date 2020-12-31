@@ -1,14 +1,28 @@
 package main
 
 import (
+    "os"
     "time"
 )
 
-func main() {
-    Parse()
-    model := NewModel()
-    for now := range time.Tick(*interval) {
-        Get(model)
-        Update(now, model)
+func Loop(model Model) {
+    for {
+        select {
+        case <-done:
+            return
+        case now := <-time.Tick(*interval):
+            HttpGet(model)
+            UpdateScreen(now, model)
+        }
     }
+}
+
+func main() {
+    ParseArgs()
+    RegisterSignal()
+    model := NewModel()
+    Loop(model)
+    PostAction(model)
+
+    os.Exit(0)
 }
